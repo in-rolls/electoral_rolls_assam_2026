@@ -46,7 +46,7 @@ POSTAL_API = "https://api.postalpincode.in/pincode/{pin}"
 #: audit; there is no deadline that justifies hammering it.
 REQUEST_PAUSE = 0.4
 
-USER_AGENT = "assam_elex_rolls_2026 (open data audit; github.com/in-rolls)"
+USER_AGENT = "electoral_rolls_assam_2026 (open data audit; github.com/in-rolls)"
 
 
 #: Border pincodes serve offices across the state line. Two Meghalaya offices reached the

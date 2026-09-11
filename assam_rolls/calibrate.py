@@ -43,11 +43,7 @@ from .parse import (
     COLON_LIKE,
 )
 from .parse import LOCALITY_FIELDS as CORE_LOCALITY_FIELDS
-from .parse import (
-    MIN_LABEL_GAP,
-    REVISION_FIELDS,
-    text_rows,
-)
+from .parse import MIN_LABEL_GAP, REVISION_FIELDS, text_rows
 from .schema import clean_text
 
 logger = get_logger(__name__)

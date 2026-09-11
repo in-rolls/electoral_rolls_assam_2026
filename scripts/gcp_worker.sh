@@ -124,7 +124,7 @@ apt-get -qq install -y poppler-utils tesseract-ocr tesseract-ocr-asm tesseract-o
 # processed by code three fixes out of date while the log cheerfully said it had cloned.
 say "cloning the pipeline at its current main"
 rm -rf "$ROOT/repo"
-git clone -q https://github.com/in-rolls/assam_elex_rolls_2026.git "$ROOT/repo" || {
+git clone -q https://github.com/in-rolls/electoral_rolls_assam_2026.git "$ROOT/repo" || {
   say "clone failed -- refusing to run stale code"; exit 1; }
 cd "$ROOT/repo"
 COMMIT=$(git rev-parse --short HEAD)
