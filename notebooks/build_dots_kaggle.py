@@ -117,7 +117,7 @@ assert transformers.__version__.startswith("4.56"), "restart the kernel; an olde
 # with several thousand files in it makes `kaggle kernels output` fetch every one of them --
 # ten minutes to reach a log and two JSON files.
 !rm -rf /tmp/repo
-!git clone --depth 1 -q https://github.com/in-rolls/assam_elex_rolls_2026 /tmp/repo
+!git clone --depth 1 -q https://github.com/in-rolls/electoral_rolls_assam_2026 /tmp/repo
 
 # Two views of the *same* 240 boxes, so speed and quality can be compared directly:
 #   box  -- the whole text column, 378 vision tokens, 4.08 TFLOPs

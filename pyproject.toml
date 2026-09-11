@@ -5,7 +5,7 @@ description = "Extract Assam 2026 electoral-roll metadata and elector lists from
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
-authors = [{ name = "Gaurav Sood", email = "gsood07@gmail.com" }]
+authors = [{ name = "Gaurav Sood", email = "contact@gsood.com" }]
 keywords = ["electoral-rolls", "india", "assam", "ocr", "elections", "polling-stations"]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -33,11 +33,11 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/in-rolls/assam_elex_rolls_2026"
-Documentation = "https://in-rolls.github.io/assam_elex_rolls_2026/"
-Repository = "https://github.com/in-rolls/assam_elex_rolls_2026"
-Issues = "https://github.com/in-rolls/assam_elex_rolls_2026/issues"
-Releases = "https://github.com/in-rolls/assam_elex_rolls_2026/releases"
+Homepage = "https://github.com/in-rolls/electoral_rolls_assam_2026"
+Documentation = "https://in-rolls.github.io/electoral_rolls_assam_2026/"
+Repository = "https://github.com/in-rolls/electoral_rolls_assam_2026"
+Issues = "https://github.com/in-rolls/electoral_rolls_assam_2026/issues"
+Releases = "https://github.com/in-rolls/electoral_rolls_assam_2026/releases"
 
 [project.scripts]
 assam-rolls = "assam_rolls.cli:main"
