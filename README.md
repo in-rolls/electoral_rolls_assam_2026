@@ -198,7 +198,6 @@ The Claude path in `extract.py` is retained but not wired into the default flow 
 make test        # pytest
 make lint        # black --check, isort --check-only, flake8
 make ci          # both
-make ci-docker   # the above in a standard python:3.12 image
 ```
 
 ## Measured results
@@ -288,3 +287,7 @@ survey before a schema can be fixed.
 - [`in-rolls/parse_unsearchable_rolls`](https://github.com/in-rolls/parse_unsearchable_rolls) — shared roll-parsing core
 - [`in-rolls/electoral_rolls`](https://github.com/in-rolls/electoral_rolls) — scrapers
 - [`in-rolls/savitr`](https://github.com/in-rolls/savitr) — Surya OCR on Apple Silicon
+
+## Maintenance
+
+This is a point-in-time data collection; see the [shared maintenance policy](https://github.com/soodoku/data-repos#maintenance-policy). Run the affected parser tests when code changes and the relevant data validators when inputs or outputs change. Full-data checks and publication are explicit operations. Routine edits do not require hosted CI, Docker, a Python-version matrix, Preen or pre-commit.

@@ -1,4 +1,4 @@
-.PHONY: install lint fmt test ci ci-docker render extract validate review elector-release clean
+.PHONY: install lint fmt test ci  render extract validate review elector-release clean
 
 PY := .venv/bin/python
 PIP := uv pip install --python .venv/bin/python
@@ -22,16 +22,6 @@ test:
 	$(PY) -m pytest -q
 
 ci: lint test
-
-# Standard image, no custom Dockerfile.
-ci-docker:
-	docker run --rm -v "$(CURDIR)":/w -w /w python:3.12 bash -c "\
-		apt-get update -qq && apt-get install -y -qq poppler-utils >/dev/null && \
-		pip install -q -e '.[dev]' && \
-		black --check assam_rolls romanize electors tests && \
-		isort --check-only assam_rolls romanize electors tests && \
-		flake8 assam_rolls romanize electors tests && \
-		pytest -q"
 
 render:
 	$(PY) -m assam_rolls.cli render --zip-dir data/ac_info --out out/pages
