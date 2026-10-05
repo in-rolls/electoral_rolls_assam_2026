@@ -1,7 +1,7 @@
 """Google Cloud Vision, billed per image rather than per page.
 
 Vision charges for each **image submitted**, not for each page of source, so stacking pages
-into one tall PNG divides the bill by the stacking factor. ``in-rolls/google_vision_ocr`` uses
+into one tall PNG divides the bill by the stacking factor. ``in-rolls/electoral_rolls_ocr_google_vision`` uses
 exactly this and reports 12,694 pages for about $1.50.
 
 **Which makes render resolution the cost lever.** The source PDFs are 144 dpi scans -- no fonts,
