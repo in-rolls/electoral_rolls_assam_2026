@@ -35,7 +35,7 @@ estimate is offered until each worker has actually read a part — a resumed run
 parts in about a second each, and counting those as throughput put the first estimate for a
 two-hour job at 57 seconds.
 
-### Measured cost, and three optimisations that did not survive measurement
+### Measured cost, and three optimizations that did not survive measurement
 
 On a 10-core machine shared with other work (load ~25), 5 workers: **a part takes about 47
 minutes** (822 electors in 46m58s; 873 in 47m34s) and a constituency projects to **16-17
@@ -46,11 +46,11 @@ hours**. One page of thirty electors costs about 53 seconds, and it divides:
 | text bands, 123 crops at scale 2 | 56% |
 | name band, 30 crops at scale 3 | 17% |
 | serial strips | 11% |
-| rasterising the page | 11% |
+| rasterizing the page | 11% |
 | EPIC strips | 2% |
 
 Four attempts to cut it, three of which failed and are recorded because a failed
-optimisation tried twice is worse than one written down:
+optimization tried twice is worse than one written down:
 
 - **`OMP_THREAD_LIMIT=1`.** Tesseract multithreads, and five workers spawn far more threads
   than there are cores. Interleaved A/B: **0.97x, faster in 5 rounds of 8** — noise. An earlier
@@ -58,10 +58,10 @@ optimisation tried twice is worse than one written down:
   machine was quietening, so "second in the round" was worth the entire effect.
 - **Whole text column at `psm 6` instead of four band crops at `psm 7`.** Five times faster,
   4.1s against 20.0s — and it recovered 34 of 120 fields against 104. Rejected.
-- **Rasterising in grey rather than colour.** Every consumer converts to grey anyway, so the
-  colour channels looked like pure waste, and a first A/B said 13% faster with byte-identical
+- **Rasterizing in gray rather than color.** Every consumer converts to gray anyway, so the
+  color channels looked like pure waste, and a first A/B said 13% faster with byte-identical
   text on 123 of 123 crops. Isolating the stages that actually change killed it: the PNG is the
-  **same size either way** (2.88 MB), because the source PDFs are already grey. Render 0.99x,
+  **same size either way** (2.88 MB), because the source PDFs are already gray. Render 0.99x,
   load 0.97x, 0.04s saved per page. The 13% was the machine.
 - **The serial zone.** This one worked: see above.
 
@@ -101,7 +101,7 @@ records the worker count alongside the timing for that reason.
 
 An elector page is a ruled grid, three columns by ten boxes. Each box holds six fields in two
 places: a **header strip** across the full width with the serial number at the left and the
-EPIC at the right, and a **text column** below it with four labelled lines.
+EPIC at the right, and a **text column** below it with four labeled lines.
 
 ```
 নাম : খাদৰাম ৰাভা              name
@@ -251,7 +251,7 @@ Four engines on 16 boxes sampled at random and read by eye -- the only real grou
 | sex right | 94% | 44% | 94% | **100%** |
 
 Tesseract reads no name exactly right in sixteen. Its Assamese is not broken -- it returns
-recognisable text with wrong details -- and it is the engine rather than the cropping: the
+recognizable text with wrong details -- and it is the engine rather than the cropping: the
 pipeline's band finder, a re-derived band and a fixed slice of the box all give the same 6/16.
 
 **Bengali traineddata was tried and is worse.** Assamese and Bengali share one script and
@@ -314,7 +314,7 @@ the state.**
 
 Vision bills per **image submitted**, and a rendered page is 15.5 MP of which **30% is text**.
 The rest is photo placeholders, ruled borders, page margins and the white space under the last
-line of every box. So the page is repacked before submission: each box's four labelled lines are
+line of every box. So the page is repacked before submission: each box's four labeled lines are
 cut to their band extent and tiled three to a row, and words are assigned back to a box by their
 rectangle on both axes.
 
@@ -535,7 +535,7 @@ agreement, never as accuracy, because two engines can be wrong together.
 
 ### Combining engines: three or one, nothing in between
 
-The engines fail differently -- Gemini regularises spellings toward commoner forms because it
+The engines fail differently -- Gemini regularizes spellings toward commoner forms because it
 is a language model, while dots.ocr, Surya and Vision are pure OCR with no such prior -- which
 is the condition under which a vote beats a single reader. Majority vote, ties broken by the
 preferred engine, on the 33 boxes all three answered:
@@ -590,7 +590,7 @@ second pass is tens of hours per constituency, so which rows to send is the only
 
 A cheap pass will always leave errors; what makes that acceptable is knowing which rows they
 are, so an expensive engine runs on those and only those. Four families feed the router:
-provably wrong, two-scale disagreement, a relation whose label was never recognised, and two or
+provably wrong, two-scale disagreement, a relation whose label was never recognized, and two or
 more missing core fields. It flags **28.3%** of rows.
 
 The disagreement threshold is measured rather than chosen. Over 1,733 boxes where both scales
@@ -616,7 +616,7 @@ The age detector is the case in point. `age_ambiguous` fires where the age zone 
 digits than an age can account for — `বয়স ' 9526`. Flagged rows put 15.2% of ages in the
 nineties; unflagged rows put 2.2% there, and fall away from 28.6% in the twenties exactly as a
 roll should. That is a **6.8× concentration** of demographically impossible ages, established
-without a single labelled row.
+without a single labeled row.
 
 Which end of a long run is the age was left undecided on purpose. Read from the left it puts
 15.3% of those rows in the nineties, from the right 13.6%, against the 2.3% the unambiguous
@@ -638,7 +638,7 @@ remains the candidate.
 ## What is not measured
 
 None of this measures name accuracy against truth. The bracket — provably wrong at the floor,
-two-scale disagreement at the ceiling — is what exists without labelled data, and cross-engine
+two-scale disagreement at the ceiling — is what exists without labeled data, and cross-engine
 agreement will narrow it without closing it. Agreement is reported as agreement, never as
 accuracy: two engines can be wrong together.
 

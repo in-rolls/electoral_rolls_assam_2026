@@ -103,7 +103,7 @@ def check_structure(part_dir: Path) -> PartCheck:
     # Inside one composite no two tiles may overlap: a word in the overlap belongs to both.
     for image, tiles in placements.items():
         for i, a in enumerate(tiles):
-            for b in tiles[i + 1 : i + 4]:  # sorted by position, so neighbours suffice
+            for b in tiles[i + 1 : i + 4]:  # sorted by position, so neighbors suffice
                 if _overlaps(a, b):
                     check.note(f"{image}: tiles overlap at {_rect(a)} and {_rect(b)}")
     return check

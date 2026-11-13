@@ -33,13 +33,13 @@ DPI = 400
 
 #: Bumped whenever extraction changes what a part yields, because the cache is keyed on it.
 #: 1.1.0 -- partial last pages, which draw no photo dividers, are no longer discarded whole.
-#: 1.2.0 -- supplement pages are labelled instead of merged into the main roll.
+#: 1.2.0 -- supplement pages are labeled instead of merged into the main roll.
 #: 1.3.0 -- the roll's own closing totals are read, so counts have a real target.
 #: 1.4.0 -- the age line is found by its লিঙ্গ label, recovering the male rows it dropped.
 #: 1.5.0 -- the name consensus compares the two scales on the *same band*, so it can disagree.
 #:          Bumped despite the cost of discarding 10,245 cached rows: the flag it feeds was
 #:          raised zero times under 1.4.0, and a cache mixing the two would report a
-#:          disagreement rate that is part real and part an artefact of when a part was read.
+#:          disagreement rate that is part real and part an artifact of when a part was read.
 #: 1.6.0 -- bands anchor on the relation label rather than counting inwards from the ends, the
 #:          two scales are compared once against a measured threshold instead of twice against
 #:          two different rules, debris stranded after punctuation is stripped, and an age zone
@@ -85,7 +85,7 @@ class PartResult:
     unknown_pages: List[int] = field(default_factory=list)
     #: Elector pages belonging to a supplement rather than the main roll.
     supplement_pages: List[int] = field(default_factory=list)
-    #: Pages whose header band could not be read as either. Worth a look: an unrecognised
+    #: Pages whose header band could not be read as either. Worth a look: an unrecognized
     #: supplement would otherwise be counted as main-roll electors.
     unrecognised_headers: List[int] = field(default_factory=list)
     #: What the closing page says this part contains -- the number the main-roll rows are
@@ -112,7 +112,7 @@ def _render_pages(pdf_bytes: bytes, workdir: Path, dpi: int = DPI) -> List[Path]
     pdf.write_bytes(pdf_bytes)
     subprocess.run(
         # -gray, because the source is a bilevel scan: every page in out/pages has R == G == B
-        # on every pixel, so the colour channels are two exact copies. Rendering them costs three
+        # on every pixel, so the color channels are two exact copies. Rendering them costs three
         # times the temp bytes and three times the decode, and every consumer here immediately
         # calls convert("L") anyway.
         ["pdftoppm", "-gray", "-r", str(dpi), "-png", str(pdf), str(workdir / "page")],

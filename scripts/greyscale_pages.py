@@ -1,4 +1,4 @@
-"""Re-encode rendered pages as greyscale, in place, losslessly.
+"""Re-encode rendered pages as grayscale, in place, losslessly.
 
 The source PDFs are bilevel scans. Every page in ``out/pages`` carries R == G == B on every
 pixel, so two of the three channels are exact copies and cost a third of the file each. The
@@ -32,7 +32,7 @@ def channels_identical(image: Image.Image) -> bool:
 
 
 def convert(path: Path) -> int:
-    """Bytes saved, 0 if the page was already grey or must not be touched."""
+    """Bytes saved, 0 if the page was already gray or must not be touched."""
     with Image.open(path) as image:
         if image.mode == "L":
             return 0

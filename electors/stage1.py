@@ -3,7 +3,7 @@
 The pipeline splits at the only expensive step. This stage renders each part, finds the boxes
 geometrically from the ruled lines, finds the text lines inside them, reads the three fields
 tesseract is good enough for -- the EPIC, the section header and the closing totals -- and packs
-the four labelled lines into composites for Cloud Vision.
+the four labeled lines into composites for Cloud Vision.
 
 Everything it produces is what stage two needs and nothing more:
 

@@ -10,7 +10,7 @@ Three things travel, and the reasons differ:
   can be recomputed here rather than believed. Re-judging from ``stage1`` would mean pulling
   412 MB a constituency, and pulling fifty gigabytes to check seven hundred megabytes is the
   wrong shape -- but more to the point, ``stage1`` is one of the things being deleted.
-- **the Vision words**, ~120 MB a constituency, which are the only artefact that cost money.
+- **the Vision words**, ~120 MB a constituency, which are the only artifact that cost money.
   $148 to re-read for the state. Composites, renders and rows are CPU we can spend again; the
   words are not. With them here the bucket becomes disposable and a better parser costs nothing.
 

@@ -49,7 +49,7 @@ well-known Assam districts, top-1 exact:
 
 IndicXlit wins, but its misses are *systematic*: it renders Assamese **phonetics** —
 `xunitpur` because শ is /x/, `zurhat` because যো is /z/, `dixpur` for Dispur — where
-conventional spellings are older anglicisations. It optimises a different target, so its
+conventional spellings are older anglicisations. It optimizes a different target, so its
 output seeds a reviewable table rather than shipping directly.
 
 `indicate` was tried and is **not broken** — it has no Assamese weights. Fed Bengali script
@@ -179,7 +179,7 @@ The table is complete. It is **not** fully reviewed, and the `source` column say
 value can be nine parts reviewed and one part not, and the first counts that as unreviewed.
 Both are in the file: `source` and `authority` per row, and the lexicon itself.
 
-Capitalisation happens to make this legible. Reviewed and official tokens are title-cased,
+Capitalization happens to make this legible. Reviewed and official tokens are title-cased,
 model output is not, so `puthimari ombikagiri High School (Baon Ansh)` shows at a glance
 which half someone looked at.
 

@@ -9,7 +9,7 @@ known. This draws a fresh one.
 version that scored the subset where two engines differed, which measures that subset and would
 have reported the disagreement rate as the error rate. The sample here is seeded and uniform.
 
-**The whole box, not the tile that goes to Vision.** The pipeline sends only the four labelled
+**The whole box, not the tile that goes to Vision.** The pipeline sends only the four labeled
 lines; a reviewer needs the header strip too, because the EPIC and the serial live there and
 because context is what lets somebody judge a name they cannot otherwise verify.
 
@@ -236,7 +236,7 @@ def main() -> int:
     rows = output.read_shard(Path(args.shard))
 
     # Rendering is half an hour and the crops are already inlined in a sheet built earlier, so
-    # adding a column to the form does not mean rasterising 30 parts again.
+    # adding a column to the form does not mean rasterizing 30 parts again.
     if args.reuse:
         existing = dict(reuse_crops(Path(args.reuse)))
         keyed = {

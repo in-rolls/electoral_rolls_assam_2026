@@ -162,7 +162,7 @@ def tiles_for(
 ) -> Tuple[List[Tuple[Image.Image, Tuple[int, int, int, int], Tuple[int, int, int]]], Dict]:
     """Every box's text lines as a tile, plus what the CPU needs to read for itself.
 
-    Only the four labelled lines go to Vision. Three other things are read here on hardware
+    Only the four labeled lines go to Vision. Three other things are read here on hardware
     already paid for, because none of them is worth a paid pixel:
 
     - the **EPIC** and the serial, which sit to the right of ``text_right`` in the photo column.
@@ -310,8 +310,8 @@ def _read(
 #: repair strips non-alphanumerics before matching, so the slash is deleted rather than treated as
 #: the digit position it occupies, and a recoverable value becomes a nine-character one.
 #:
-#: Measured on one part: of 31 malformed EPICs, 28 are explained entirely by an interior artefact,
-#: and in all 30 occurrences that artefact is ``/``. It is also why the defect tracks the box row
+#: Measured on one part: of 31 malformed EPICs, 28 are explained entirely by an interior artifact,
+#: and in all 30 occurrences that artifact is ``/``. It is also why the defect tracks the box row
 #: -- a rule intrudes into the strip at some row positions and not others, giving 0.0% malformed on
 #: rows 2, 6 and 7 against 7.5-9.4% on row 9, near-identically across eight constituencies.
 #:

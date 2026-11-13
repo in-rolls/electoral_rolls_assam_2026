@@ -72,7 +72,7 @@ def _client():
 
 
 def _render_one(job):
-    """Worker: rasterise one part's page to PNG. Top-level so it pickles."""
+    """Worker: rasterize one part's page to PNG. Top-level so it pickles."""
     from . import render as render_mod_w
 
     zip_path, ref, out_dir, page, overwrite = job
@@ -89,10 +89,10 @@ def _render_one(job):
 
 
 def cmd_render(args: argparse.Namespace) -> int:
-    """Rasterise every part's page 1 to PNG.
+    """Rasterize every part's page 1 to PNG.
 
     Each part is an independent poppler call, so this runs across a process pool -- the
-    statewide corpus is ~31,000 pages and rasterising them one at a time leaves most of
+    statewide corpus is ~31,000 pages and rasterizing them one at a time leaves most of
     the machine idle. Resumable: a part whose PNG already exists is skipped.
     """
     import multiprocessing as mp

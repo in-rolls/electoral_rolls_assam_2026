@@ -3,9 +3,9 @@
 A part PDF is three kinds of page in sequence: the two info pages already parsed into
 ``dataset/parts.jsonl.gz``, then the elector pages, then a summary. Page *count* varies with
 how many electors a part has, so only the first two positions are fixed and everything else
-has to be recognised.
+has to be recognized.
 
-Recognising it by rule signature rather than by position is not fussiness. The info-page
+Recognizing it by rule signature rather than by position is not fussiness. The info-page
 pipeline was scoped as "ACs 64-73" from a one-page-per-AC sample and turned out to be 28 ACs
 and 2,601 pages once every page was measured; layout in this corpus varies more than a
 sample suggests. Only one AC of rolls is downloadable today, so any constant read off AC 1
@@ -17,7 +17,7 @@ The signature is robust because it is structural:
     summary page   ruled rows, no columns              ->  no vertical rules
     info page      the form grid                       ->  positions 1 and 2, always
 
-An unrecognised page is **flagged, never parsed**. A page this module cannot classify is a
+An unrecognized page is **flagged, never parsed**. A page this module cannot classify is a
 page whose geometry we do not understand, and guessing at 30 box positions on it would
 produce 30 plausible rows of nonsense.
 """
@@ -68,14 +68,14 @@ class Section(str, Enum):
 #: Matched as **whole words**, not substrings. A supplement's header reads ``যোগ তালিকা 1``, and
 #: matching ``যোগ`` anywhere filed every page of part 38 as an addition list -- because its
 #: polling station is যোগেন্দ্ৰপুৰ, Jogendrapur, and the marker is the first three letters of the
-#: village. 534 rows of a 1,048-row main list were labelled a supplement, and the part then read
+#: village. 534 rows of a 1,048-row main list were labeled a supplement, and the part then read
 #: 514 against its own printed total.
 #:
 #: ``বাদ`` would have been worse in a way nobody would have noticed: countless place names end
 #: in -abad. That one never fired in AC1 only by luck of which villages are in it.
 #: The English edition writes these out: ``List of Addition 1 ( 27-12-2025 04-02-2026 )``. Matched
 #: without the Bengali-letter boundary below, which cannot apply to Latin words -- the boundary is
-#: there to stop যোগ matching inside যোগেন্দ্ৰপুৰ, and "Addition" has no such neighbour.
+#: there to stop যোগ matching inside যোগেন্দ্ৰপুৰ, and "Addition" has no such neighbor.
 SECTION_MARKERS = (
     ("List of Addition", Section.ADDITION),
     ("List of Deletion", Section.DELETION),
@@ -105,9 +105,9 @@ STATION_FIELD = re.compile(r"অংশৰ[^:]{0,24}নাম\s*[:：]")
 
 
 def section_of(header: str) -> Tuple[Section, bool]:
-    """``(section, recognised)`` for one page's header band.
+    """``(section, recognized)`` for one page's header band.
 
-    An unrecognised header is reported as ``MAIN`` with ``recognised=False`` rather than
+    An unrecognized header is reported as ``MAIN`` with ``recognised=False`` rather than
     guessed at. A supplement worded in a way this does not know about then shows up as a
     flagged page -- something to look at -- instead of as electors quietly merged into the
     main roll, which is the failure that matters.
@@ -127,7 +127,7 @@ def section_of(header: str) -> Tuple[Section, bool]:
         if re.search(r"(?<![\u0980-\u09FF])" + marker + r"(?![\u0980-\u09FF])", searchable):
             return section, True
     # Whether the header was understood at all, in either language. A main-roll page that is not
-    # recognised is counted as an unrecognised header and reported, so leaving the English forms
+    # recognized is counted as an unrecognized header and reported, so leaving the English forms
     # out would have flagged every one of AC113's pages as unreadable while they parsed fine.
     # Both ra's: Assamese ৰ and Bengali র. AC126 writes সমষ্টির and every one of its 2,328 pages
     # was reported unreadable while parsing fine.
@@ -248,7 +248,7 @@ def recover_partial(signatures: Sequence[PageSignature]) -> List[PageSignature]:
         # ink, not by whether the publisher happened to print a particular edge.
         #
         # Part 43's page 25 holds five electors across three columns. Its third column's left
-        # edge was not inked -- only the neighbouring line of the shared border -- so the strict
+        # edge was not inked -- only the neighboring line of the shared border -- so the strict
         # test called that column absent and serial 663 was dropped from a page whose other two
         # columns read fine.
         if grid.columns_present(signature.v_rules, established) and grid.row_bands(

@@ -189,7 +189,7 @@ MODEL_FIELDS: List[Dict[str, Any]] = [
     {"name": "block_roman", "type": "string", "desc": "Romanization."},
     {"name": "revenue_circle", "type": "string", "desc": "ৰাজহ চক্ৰ (revenue circle), verbatim."},
     {"name": "revenue_circle_roman", "type": "string", "desc": "Romanization."},
-    # Printed only on the English edition, between the revenue circle (there labelled
+    # Printed only on the English edition, between the revenue circle (there labeled
     # "Tehsil") and the district.
     {"name": "subdivision", "type": "string", "desc": "Subdivision, verbatim (English only)."},
     {"name": "district", "type": "string", "desc": "জিলা, verbatim."},

@@ -5,7 +5,7 @@ came back non-empty. ``epic=83%`` says 83% of rows have something in the EPIC co
 nothing about whether that something is the elector's EPIC, and an 83% fill is equally
 consistent with 83% correct and 40% correct.
 
-There is no labelled data here, so accuracy cannot be measured directly. It can be
+There is no labeled data here, so accuracy cannot be measured directly. It can be
 **bracketed**, which is worth more than another fill rate:
 
 **Lower bound -- values that cannot be right.** An Assamese name does not contain Latin
@@ -192,7 +192,7 @@ def report(rows: Iterable[Dict[str, Any]], reconciliation: Dict[str, Any]) -> Di
 
 
 def format_report(data: Dict[str, Any]) -> str:
-    """The report as text, with each group labelled by what it can prove."""
+    """The report as text, with each group labeled by what it can prove."""
     measured = data["measured"]
     wrong = data["definitely_wrong"]
     disagree = data["disagreement"]

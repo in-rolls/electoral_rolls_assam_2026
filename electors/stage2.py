@@ -265,7 +265,7 @@ def save_words(part_dir: Path, image: str, found: Sequence[vision.Word]) -> None
     Rows were the only thing kept, and rows are a *parse* of the answer rather than the answer.
     Every improvement to the parser therefore cost the whole API bill again: the EPIC fix that
     took well-formed reads from 62% to 99% would have meant re-buying every image in the state
-    to apply it. Words are the last point at which the money has been spent and no judgement has
+    to apply it. Words are the last point at which the money has been spent and no judgment has
     yet been made, so they are what to keep.
 
     About 6,000 words a composite, which is a megabyte or so -- next to nothing beside the

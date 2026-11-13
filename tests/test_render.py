@@ -180,7 +180,7 @@ class TestResamplingFilter:
         assert render.RESAMPLING is Image.Resampling.NEAREST
 
     def test_a_thin_stroke_survives_upscaling(self):
-        """A one-pixel vertical stroke must not gain neighbours it never had."""
+        """A one-pixel vertical stroke must not gain neighbors it never had."""
         small = Image.new("L", (20, 20), 255)
         for y in range(4, 16):
             small.putpixel((10, y), 0)

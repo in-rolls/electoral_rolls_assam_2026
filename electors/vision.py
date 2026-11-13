@@ -310,7 +310,7 @@ def words_within(words: Sequence[Word], left: int, top: int, right: int, bottom:
     why it survived a stubbed end-to-end run and was caught only by looking at the values.
 
     The middle rather than the whole word: box borders are shared, so a tall glyph crosses into
-    the neighbour and requiring containment would drop it from both.
+    the neighbor and requiring containment would drop it from both.
     """
     return [
         w

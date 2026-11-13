@@ -46,7 +46,7 @@ def _word(text: str, left: int, top: int, right: int, bottom: int) -> Dict[str, 
 
 
 def reply_for(placed: Sequence[Any]) -> List[Dict[str, Any]]:
-    """One synthetic Vision response: four labelled lines inside each tile's rectangle."""
+    """One synthetic Vision response: four labeled lines inside each tile's rectangle."""
     words: List[Dict[str, Any]] = []
     for tile in placed:
         lines = [
