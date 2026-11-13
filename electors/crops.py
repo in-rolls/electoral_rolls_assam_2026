@@ -74,7 +74,7 @@ BAND_PAD_FRACTION = 0.45
 
 
 def band_window(bands: Sequence[Tuple[int, int]], index: int, box: grid.Box) -> Tuple[int, int]:
-    """The crop rectangle for one band: padded generously, never into its neighbour.
+    """The crop rectangle for one band: padded generously, never into its neighbor.
 
     Padding alone bleeds the next line into the crop -- at 0.45 the relation line arrives under
     the name, and a model handed two lines may answer with either. Clamping each side to the

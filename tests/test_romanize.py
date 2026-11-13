@@ -276,7 +276,7 @@ class TestScopedMatching:
         assert "Ansh" not in anchor.core_text("বচদ্ৰৱা অংশ", self.WORDS)
 
     def test_the_suffix_is_put_back_after_matching(self):
-        """An authority on the place name is not a licence to drop what the roll printed."""
+        """An authority on the place name is not a license to drop what the roll printed."""
         from romanize import anchor
 
         assert anchor.apply("ৰহা অংশ", "Raha", self.WORDS) == "Raha Ansh"

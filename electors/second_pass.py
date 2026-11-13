@@ -7,7 +7,7 @@ distilled Surya reads the same crops -- on one page it took the house number fro
 
 **It is also right where the two disagree.** On the seven ages both engines read differently,
 tesseract gave 92, 92, 85 and 96 while Surya gave 59, 52, 25 and 61. That is the same excess of
-nonagenarians the age distribution had already flagged as an artefact -- 220 rows in the
+nonagenarians the age distribution had already flagged as an artifact -- 220 rows in the
 nineties against 126 in the seventies -- so the disagreement is not a coin toss between two
 opinions, it is one engine reproducing a known defect and the other not.
 
@@ -183,7 +183,7 @@ MIN_AGE, MAX_AGE = 18, 120
 REPEAT = re.compile(r"(.{20,}?)\1{2,}", re.S)
 
 
-#: The full Surya model answers in HTML and the distilled one in pipes. Both are normalised to
+#: The full Surya model answers in HTML and the distilled one in pipes. Both are normalized to
 #: the same shape here rather than parsed twice: two readers for one format is the bug that put
 #: the elector's own name in the relation field, and it would be the fourth time.
 #: Only these end a line. ``<span>`` is inline -- treating it as a break severed ``নাম`` from
@@ -250,7 +250,7 @@ class Reading:
             value = _clean_value(relation.group("value"))
             if value:
                 found["relation_name"] = value
-                # The label may have arrived with either RA, so normalise before looking it
+                # The label may have arrived with either RA, so normalize before looking it
                 # up -- and lowercased, because the English labels are matched case-insensitively
                 # and arrive as printed ("Fathers"), which no key would match.
                 kind = relation.group("kind").replace("র", "ৰ").lower()
@@ -263,7 +263,7 @@ class Reading:
                 found["name"] = value
         else:
             # The model often drops the label and leads with the name. Take the first field
-            # that is Assamese text and is not one of the labelled ones.
+            # that is Assamese text and is not one of the labeled ones.
             for part in (p.strip() for p in re.split(r"\||\n", text)):
                 if not part or part.isdigit():
                     continue
@@ -308,7 +308,7 @@ def wanted(row: Dict[str, Any]) -> bool:
 def merge(row: Dict[str, Any], reading: Reading) -> Dict[str, Any]:
     """The row with recovered fields filled in, never overwritten.
 
-    Gaps are filled from the second pass. A *disagreement* is resolved in its favour only for
+    Gaps are filled from the second pass. A *disagreement* is resolved in its favor only for
     the fields in :data:`OVERRULED`, and only because the crops were read by eye and it won
     every one. Everywhere else the first pass's value stands.
 

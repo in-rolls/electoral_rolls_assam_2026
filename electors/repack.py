@@ -26,7 +26,7 @@ from typing import Any, Dict, List, Sequence, Tuple
 #:
 #: Nothing depends on it for correctness -- words are assigned by rectangle, so tiles could abut
 #: and still be separated exactly. It is here so the composite still looks like a document to
-#: whatever layout analysis Vision runs before recognising anything.
+#: whatever layout analysis Vision runs before recognizing anything.
 GUTTER = 24
 
 #: Tiles per row. Three keeps the composite's proportions close to the page it came from, which

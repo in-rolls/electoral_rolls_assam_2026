@@ -250,7 +250,7 @@ def test_a_latin_name_survives_the_foreign_stripper():
     A value with no Assamese in it is not an Assamese name carrying debris; it is Latin text.
     """
     assert fields.strip_foreign("PROKAS RAI")[0] == "PROKAS RAI"
-    # and the original behaviour, where there is something for the Latin to be debris of
+    # and the original behavior, where there is something for the Latin to be debris of
     assert fields.strip_foreign("ৰমেন দাস 12")[0] == "ৰমেন দাস"
 
 

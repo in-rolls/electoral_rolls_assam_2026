@@ -21,7 +21,7 @@ Quality, measured on twelve well-known Assam districts (top-1 exact):
 
 The misses are systematic, not noise: IndicXlit renders Assamese **phonetics** -- ``xunitpur``
 because Assamese শ is /x/, ``zurhat`` because যো is /z/ -- where conventional English
-spellings are older anglicisations. It is not undertrained; it is optimising a different
+spellings are older anglicisations. It is not undertrained; it is optimizing a different
 target. That is why its output seeds a reviewable table instead of shipping directly.
 """
 

@@ -708,7 +708,7 @@ class TestTheProposalEngine:
 
         The first version of this test used ``i % 5`` for failures and ``i % 10`` for the row,
         which puts every failure in rows 0 and 5 -- a real association. The engine found it and
-        the test was wrong. Randomised so the null really is null.
+        the test was wrong. Randomized so the null really is null.
         """
         rng = random.Random(3)
         rows = [
@@ -908,7 +908,7 @@ class TestNameConsensus:
 
 
 class TestDiagnosingWrongValues:
-    """An engine that localises only what is absent will never point at what is false."""
+    """An engine that localizes only what is absent will never point at what is false."""
 
     def test_a_wrong_value_is_a_failure_class_the_engine_can_localise(self):
         rows = [
@@ -966,7 +966,7 @@ class TestDerivedFeatures:
         matter of taste.
         """
         # Four parts, so the first-page slice clears MIN_SUPPORT. A slice below it is not
-        # reported at all, which is the intended behaviour: a rate over five rows is noise.
+        # reported at all, which is the intended behavior: a rate over five rows is noise.
         rows = [r for part in range(1, 5) for r in self._part([1, 2, 3, 4, 5], 10, part)]
         enriched = diagnose.derive_features(rows)
         for row in enriched:
@@ -1723,13 +1723,13 @@ class TestVisionWordMapping:
         assert lines == ["নাম খাদৰাম", "গংগাৰাম"]
 
     def test_a_word_grazing_the_band_above_stays_where_it_belongs(self):
-        """Bands are padded and adjacent, so a tall glyph can touch its neighbour."""
+        """Bands are padded and adjacent, so a tall glyph can touch its neighbor."""
         grazing = [vision.Word("ৰাভা", left=10, top=50, right=60, bottom=80)]
         assert vision.lines_in(grazing, [(5, 55)], 0, 200) == [""]
         assert vision.lines_in(grazing, [(55, 85)], 0, 200) == ["ৰাভা"]
 
     def test_words_outside_the_column_are_not_pulled_in(self):
-        """The photo strip and the neighbouring box sit at the same heights."""
+        """The photo strip and the neighboring box sit at the same heights."""
         words = vision.words_from(self.RESPONSE)
         assert vision.lines_in(words, [(5, 35)], left=0, right=45) == ["নাম"]
 
@@ -2298,7 +2298,7 @@ class TestPartialLastPage:
     def test_a_shared_border_may_be_inked_anywhere_across_its_width(self):
         """Part 5's page 15 held three electors and an exact edge test found two.
 
-        Neighbouring columns share a border drawn as two or three lines, and which of them the
+        Neighboring columns share a border drawn as two or three lines, and which of them the
         publisher inks varies by page. Demanding a rule within a few pixels of where the full
         pages put that edge dropped the middle column, and the elector on it.
         """
@@ -3289,7 +3289,7 @@ class TestVisionLinesByPosition:
 
     def test_a_glyph_crossing_a_shared_border_still_belongs_to_one_box(self):
         """Box borders are shared, so requiring full containment would drop a tall glyph from
-        both neighbours."""
+        both neighbors."""
         crossing = [vision.Word("ৰাম", left=10, top=90, right=60, bottom=130)]
         assert vision.words_within(crossing, 0, 0, 200, 100) == []
         assert len(vision.words_within(crossing, 0, 100, 200, 200)) == 1

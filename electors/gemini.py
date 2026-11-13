@@ -82,7 +82,7 @@ PAGE_SCHEMA: Dict[str, Any] = {
 #: worse than one that leaves it out.
 #:
 #: **A stricter prompt was tried and made it worse.** Every exact-name miss is the model
-#: normalising toward a commoner spelling -- ``প্ৰাণজিততা`` for the ``প্ৰানজিতা`` the roll
+#: normalizing toward a commoner spelling -- ``প্ৰাণজিততা`` for the ``প্ৰানজিতা`` the roll
 #: prints, ``সৌমন্ত্ৰী`` for ``সৌমশ্ৰী`` -- which is a language model doing what language models
 #: do, and looks like something a prompt should fix. Telling it in detail not to correct
 #: spellings dropped names from 94% near-right to 75% and cost a perfect age and sex score
@@ -194,7 +194,7 @@ def fields_of(elector: Dict[str, Any]) -> Dict[str, Any]:
 
     House numbers come back in Bengali digits -- ``১৩`` -- because the prompt asks for the page
     exactly as printed, and that is what is printed. Scoring them against Latin digits marked
-    the model wrong on 14 of 16 house numbers it had in fact read correctly. Normalised here,
+    the model wrong on 14 of 16 house numbers it had in fact read correctly. Normalized here,
     as everywhere else in this stage.
     """
     from assam_rolls import schema

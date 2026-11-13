@@ -149,7 +149,7 @@ python3 -m venv "$ROOT/venv"
 say "pulling any existing state from $BUCKET"
 # Emptied, not merely left unpulled. A reset keeps the disk, so shards downloaded by an earlier
 # boot survive it -- and the periodic sync would push them back to the bucket exactly as before,
-# which is the whole behaviour this is meant to stop. Nothing is lost: a shard is written at the
+# which is the whole behavior this is meant to stop. Nothing is lost: a shard is written at the
 # very end of a constituency, so a machine interrupted mid-run has none of its own to keep, and
 # every finished one is already in the bucket.
 rm -rf "$ROOT/shards"

@@ -55,7 +55,7 @@ S4_RULE_COUNT = 5
 #: Tolerance when matching a detected rule to its expected position.
 RULE_TOLERANCE = 4
 
-#: Ink threshold: below this grey value a pixel counts as part of a rule.
+#: Ink threshold: below this gray value a pixel counts as part of a rule.
 INK = 128
 
 #: A row/column is a rule when this share of the sampled span is ink.

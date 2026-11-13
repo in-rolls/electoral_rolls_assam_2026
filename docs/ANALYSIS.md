@@ -139,7 +139,7 @@ distinction a user needs to know whether to trust the row.
 The pipeline decides mechanically, from the same ink profile the grid detector already
 computes:
 
-| ink in the value region | text recognised | result |
+| ink in the value region | text recognized | result |
 |---|---|---|
 | no | — | `""` — the form prints nothing there |
 | yes | no | `null` — the pipeline failed to read it |
@@ -222,7 +222,7 @@ wall-clock statewide.
 
 ### A methodological note on scoring
 
-The first "normalised" metric did not work. `গাঁও` and `গাওঁ` — the same word with the
+The first "normalized" metric did not work. `গাঁও` and `গাওঁ` — the same word with the
 candra-bindu on a different base — encode as `গ া ঁ ও` and `গ া ও ঁ`. Stripping
 whitespace and punctuation leaves them different, so a mere diacritic placement counted
 as a wrong word.
@@ -413,7 +413,7 @@ checking a *running* job rather than by waiting for it to finish.
 |---|---|---|---|
 | 1 | lone `0` unread | Bengali elector-sum 64% vs Assamese 99.7% | 36% of Bengali parts |
 | 2 | lone `1` unread | Bengali `serial_order` failing 6.7% | 234 Bengali parts |
-| 3 | `part_no` misread | characterising the residual 1% | ~1% of all parts |
+| 3 | `part_no` misread | characterizing the residual 1% | ~1% of all parts |
 
 Averaged over a corpus that is 88% Assamese, the first reads as roughly 96% — unremarkable.
 Broken out, it is 64% and impossible to ignore. That is the entire argument for the
@@ -521,7 +521,7 @@ A per-AC sample cannot see a property that varies per page. The instrument has t
 grain of the thing being measured, and here the cost of getting that wrong was a blast
 radius understated by nearly 3×.
 
-### Normalise the page, not the constants
+### Normalize the page, not the constants
 
 Every pixel constant downstream is expressed against the canonical size: the rule positions
 in `layout`, the frame bounds, the six elector column defaults, each language's
@@ -543,7 +543,7 @@ targeted re-render of the pages that had failed.
 
 Unhandled, this was 2,601 parts — a whole block of the state — that produced **flagged rows
 with intact provenance** rather than plausible-looking wrong values. `build_grid` raising
-`LayoutError` on an unrecognised page is what made a surprise recoverable instead of
+`LayoutError` on an unrecognized page is what made a surprise recoverable instead of
 silently corrupt, and it is the single design decision from the first day of this work that
 paid off most.
 

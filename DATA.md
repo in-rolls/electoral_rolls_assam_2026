@@ -64,7 +64,7 @@ This dataset distinguishes two kinds of missing, and the distinction carries inf
 | `null` | `NA` | **the pipeline could not read a value that appears to be there.** |
 
 The call is made mechanically from the ink profile of the value region, not guessed: ink
-present but no text recognised → `null`; no ink → `""`.
+present but no text recognized → `null`; no ink → `""`.
 
 Why it matters: 729 of 890 parts have `ward_no == ""`. If unread values were also `""`,
 a genuine failure would be invisible among them. In this release **0 parts have a null
@@ -118,7 +118,7 @@ assert hashlib.sha256(payload).hexdigest() == row["pdf_sha256"]
 
 `ac_no`, `ac_name`, `ac_reservation`, `pc_no`, `pc_name`, `pc_reservation`, `part_no`
 
-Reservation is normalised to `GENERAL` / `SC` / `ST`.
+Reservation is normalized to `GENERAL` / `SC` / `ST`.
 
 ### Section 1 — revision (6)
 
@@ -152,7 +152,7 @@ rather than as a fourth column, keeping the revenue unit joinable across languag
 
 `ps_no`, `ps_name`, `ps_address`, `ps_type`, `auxiliary_ps_count`
 
-`ps_type` is normalised to `MALE` / `FEMALE` / `GENERAL`. `ps_no` is taken from the
+`ps_type` is normalized to `MALE` / `FEMALE` / `GENERAL`. `ps_no` is taken from the
 filename's part number, which the form's own numbering follows.
 
 ### Section 4 — electors (6)
@@ -264,7 +264,7 @@ cross-engine agreement (86.7% with Surya, on Assamese only) is not accuracy — 
 can share a failure. Fill rate is not accuracy either: a field can be 100% filled and wrong.
 
 **Bengali and English carry their own unquantified error profiles.** They are read with
-`ben` and `eng` traineddata, neither of which has been characterised here the way the
+`ben` and `eng` traineddata, neither of which has been characterized here the way the
 Assamese failures below have. All three models share the same 2017 synthetic vintage
 (`synth20170629`) — the English one is no fresher than the Indic ones.
 

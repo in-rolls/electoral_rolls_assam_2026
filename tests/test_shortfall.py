@@ -8,7 +8,7 @@ looks like from outside.
 An absolute five-row per-part bar was tried next and repeated the mistake at a higher altitude:
 AC24, one part in 177 off by nine rows out of 738, was still discarded whole. Both cases are
 pinned below with their real numbers, because the temptation each time was to move the bar until
-the thing in front of me passed, and the only defence against that is measured cases in a test.
+the thing in front of me passed, and the only defense against that is measured cases in a test.
 
 The rule that survives: whole parts going missing is caught upstream against the published part
 count; here a part may be mangled but not badly mangled, and the constituency's total shortfall is

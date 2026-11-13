@@ -2,7 +2,7 @@
 
 A box holds six things in two places. The **header strip**, spanning the full width above the
 text, carries the serial number at the left and the EPIC at the right. The **text column**
-below it carries four labelled lines::
+below it carries four labeled lines::
 
     নাম : খাদৰাম ৰাভা              name
     পিতাৰ নাম : গংগাৰাম ৰাভা       relation, and its type from the label
@@ -491,7 +491,7 @@ def is_struck_off(words: Sequence[str]) -> bool:
 def _is_age_line(line: str) -> bool:
     """Whether this band is the age/sex line.
 
-    Recognising it mattered more than it looked. Requiring ``বয়স`` or a plausible age left
+    Recognizing it mattered more than it looked. Requiring ``বয়স`` or a plausible age left
     five boxes on one page with no age line at all -- and **all five were male**, because
     their line read ``বৈবলমলস ' 2/ লঙ্গ ' পৰম``: the label garbled and the digits unreadable,
     so neither test fired and both the age *and* the sex were lost. That is the whole of the
@@ -555,7 +555,7 @@ def assign_bands(lines: Sequence[str]) -> Dict[str, str]:
         # The name by its *own* label first, and only then by position. Boxes routinely yield
         # five or six bands rather than four -- the scanner finds a rule or a speck between two
         # real lines -- and then the band immediately above the relation is debris while the
-        # name sits higher up, still labelled. Positional-only cost 37 names in 3,567 rows.
+        # name sits higher up, still labeled. Positional-only cost 37 names in 3,567 rows.
         named = next(
             (line for line in above if NAME_LABEL in line and not relation_label(line)),
             None,

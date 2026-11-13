@@ -48,7 +48,7 @@ ROWS = 10
 #: fraction is deliberately low: name text is much lighter than a printed rule.
 INK_FRACTION = 0.10
 
-#: Below this, a pixel counts as ink. Scans here are grey rather than black.
+#: Below this, a pixel counts as ink. Scans here are gray rather than black.
 INK_LEVEL = 160
 
 #: A text band shorter than this is a speck, not a line.
@@ -156,7 +156,7 @@ def balanced_columns(columns: Sequence[Tuple[int, int, int]]) -> bool:
 
 
 #: How far a rule may sit from where the part's full pages put a column edge and still be that
-#: edge. Twelve pixels at 400 dpi is under a third of a millimetre of print.
+#: edge. Twelve pixels at 400 dpi is under a third of a millimeter of print.
 EDGE_MATCH = 12
 
 
@@ -325,7 +325,7 @@ def column_triples(v_rules: Sequence[int]) -> List[Tuple[int, int, int]]:
 
 
 def _mode(values: Sequence[int], tolerance: float) -> Optional[int]:
-    """The value with the most neighbours within ``tolerance`` -- a mode that tolerates jitter."""
+    """The value with the most neighbors within ``tolerance`` -- a mode that tolerates jitter."""
     if not values:
         return None
     best, support = None, -1
@@ -389,7 +389,7 @@ def row_bands(h_rules: Sequence[int]) -> List[Tuple[int, int]]:
             # has a 25px gutter and the mode returned 56, so the page's genuine second row was
             # rejected and three plainly printed electors -- serials 663, 664, 665 -- were lost.
             # A page holding two rows cannot vote on its own row spacing; a rule sitting on the
-            # previous bottom can be recognised without a vote.
+            # previous bottom can be recognized without a vote.
             if out and top - out[-1][1] < height * 0.03:
                 continue
             out.append((top, bottom))
@@ -494,7 +494,7 @@ SHORT_BAND = 0.6
 
 
 def _restore_short(found: List[Tuple[int, int]]) -> List[Tuple[int, int]]:
-    """Grow bands the ink threshold cut short back to the height of their neighbours.
+    """Grow bands the ink threshold cut short back to the height of their neighbors.
 
     The threshold is a fraction of the **densest row in the box**, and the densest rows belong to
     the name and relation lines, which span the full text column. The house-number line does not:
@@ -509,7 +509,7 @@ def _restore_short(found: List[Tuple[int, int]]) -> List[Tuple[int, int]]:
 
     Lines inside one box are printed at one font size, so a band far shorter than the others is
     evidence about the threshold rather than about the page. Each short band is grown symmetrically
-    to the median height, stopping short of its neighbours so two lines never merge.
+    to the median height, stopping short of its neighbors so two lines never merge.
     """
     if len(found) < 3:
         return found
@@ -521,7 +521,7 @@ def _restore_short(found: List[Tuple[int, int]]) -> List[Tuple[int, int]]:
             out.append((start, end))
             continue
         grow = (median - (end - start)) // 2
-        # Never past a neighbour: a band that swallows the line above it turns one bad field into
+        # Never past a neighbor: a band that swallows the line above it turns one bad field into
         # two, and the name line is worth more than the house number.
         ceiling = found[index - 1][1] if index else 0
         floor = found[index + 1][0] if index + 1 < len(found) else start + median

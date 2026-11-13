@@ -91,7 +91,7 @@ LOCALITY_VARIANTS: Dict[Tuple[str, int], Tuple[str, ...]] = {
 #: follow the construction of the forms that *were* seen and are there so a reissued roll
 #: does not silently produce a blank.
 #:
-#: An unrecognised value yields ``""`` rather than a guess, which keeps a misread from
+#: An unrecognized value yields ``""`` rather than a guess, which keeps a misread from
 #: being filed as a real category.
 VOCAB: Dict[str, Dict[str, Dict[str, str]]] = {
     "BEN": {
@@ -382,10 +382,10 @@ def _address_label(grid: Grid, image: Image.Image, engine: Engine) -> str:
     """The station-address label, which sits on its own row inside the station cell.
 
     The cell carries **two** labels: the station's number-and-name label, then the name,
-    then the address label, then the address. Taking the first labelled row returns the
+    then the address label, then the address. Taking the first labeled row returns the
     wrong one -- it produced "No. and Name of Polling Station" as the English address
     label, which then matched the name row and left every ``ps_name`` empty. The address
-    label is the second labelled row; the name between them does not carry a colon.
+    label is the second labeled row; the name between them does not carry a colon.
     """
     cell = grid.crop(image, "s3_address")
     labelled = []

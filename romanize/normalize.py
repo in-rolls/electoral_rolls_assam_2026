@@ -6,7 +6,7 @@ context this dataset will be joined against:
 ``x`` for শ / ষ / স
     Assamese pronounces all three as /x/, so the model writes ``xalbari``, ``xapotgram``,
     ``boxistho`` where English has always written *Salbari*, *Sapatgram*, *Basistha*. This is
-    not a judgement call: of 1,831 cached tokens whose output contains ``x``, **1,830** have
+    not a judgment call: of 1,831 cached tokens whose output contains ``x``, **1,830** have
     শ, ষ or স in the source. The one exception is ``৷৷``, pure OCR noise.
 
 ``aa`` for a single আ
@@ -16,7 +16,7 @@ context this dataset will be joined against:
 Both together are worth 13,578 token-occurrences and gain +2.7 points on the hand-checked
 gold set. That gain is small because exact-match is a harsh measure of a change whose real
 effect is legibility: ``salbari`` is not certainly the conventional spelling, but it is never
-worse than ``xalbari`` and a reader can recognise it.
+worse than ``xalbari`` and a reader can recognize it.
 
 **``z`` is deliberately left alone.** য/জ do surface as *j* conventionally (*Jorhat* for
 ``zurhat``), but applying ``z``→``j`` scored **-0.3 points**: it corrupts as many tokens as it

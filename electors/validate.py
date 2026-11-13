@@ -21,7 +21,7 @@ So the checks are separated by what each can actually prove:
                have shown.
 ``published``  printed entries minus the published net, reported **as a difference with an
                outlier band** rather than as pass/fail. A part diverging far more than its
-               neighbours is worth looking at; a part diverging like its neighbours is the
+               neighbors is worth looking at; a part diverging like its neighbors is the
                publisher's arithmetic, not a defect.
 
 Field-level checks follow the shape used in ``parse_unsearchable_rolls`` -- types, ranges and
@@ -194,7 +194,7 @@ OUTLIER_SIGMA = 3.0
 
 
 def summarize(checks: Sequence[PartCheck], rows: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
-    """The numbers a report should quote, each labelled by what it can prove."""
+    """The numbers a report should quote, each labeled by what it can prove."""
     checkable = [c for c in checks if c.expected is not None]
     gaps = [c.shortfall for c in checkable if c.shortfall is not None]
     mean = statistics.fmean(gaps) if gaps else 0.0

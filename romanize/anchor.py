@@ -17,7 +17,7 @@ vocabulary -- before matching, and the suffix is put back afterwards.
 with (see ``normalize``).
 
 A match replaces only the core. ``ৰহা অংশ`` becomes *Raha Ansh*, never *Raha* -- the official
-source is an authority on the place name, not a licence to drop what the roll printed.
+source is an authority on the place name, not a license to drop what the roll printed.
 """
 
 from __future__ import annotations

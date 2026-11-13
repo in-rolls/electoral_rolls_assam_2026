@@ -132,7 +132,7 @@ def _wrong(problem: str) -> Callable[[Dict[str, Any]], bool]:
 #: Both kinds are here, and for a while only the first kind was. A missing field announces
 #: itself; a *wrong* one does not, and the single largest error class in this corpus --
 #: 1,299 rows whose name is a copy of the relation -- was invisible to the association scan
-#: while the floor detectors that find it sat in another module. An engine that localises
+#: while the floor detectors that find it sat in another module. An engine that localizes
 #: only what is absent will never point at what is merely false.
 FAILURES: Dict[str, Callable[[Dict[str, Any]], bool]] = {
     "no_epic": lambda r: not r.get("epic_no"),
@@ -298,7 +298,7 @@ def raw_read_shapes(reads: Sequence[str], limit: int = 6) -> List[Tuple[str, int
 
 @dataclass
 class Priority:
-    """One failure class, sized and characterised so the next move is obvious."""
+    """One failure class, sized and characterized so the next move is obvious."""
 
     failure: str
     affected: int

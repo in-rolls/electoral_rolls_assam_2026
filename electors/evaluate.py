@@ -1,7 +1,7 @@
 """Scoring an engine against what the page actually says.
 
 Everything else in this stage measures agreement, coverage or self-consistency, because no
-labelled data exists. That was a real limit and it hid a real problem: the name field sat at
+labeled data exists. That was a real limit and it hid a real problem: the name field sat at
 "91.5% present and not provably wrong" for the whole of this stage's development, and when a
 second engine finally made comparison possible, the two disagreed on 59% of names. Reading the
 crops settled which was right, and it was not the first pass.

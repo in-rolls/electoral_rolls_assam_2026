@@ -1,6 +1,6 @@
 """Cross-engine field-level benchmark.
 
-Modelled on ``parse_unsearchable_rolls/scripts/manipur/benchmark/score.py``. Every engine
+Modeled on ``parse_unsearchable_rolls/scripts/manipur/benchmark/score.py``. Every engine
 is driven through the **same** grid detection and the same field parser, so the numbers
 isolate OCR quality rather than parsing.
 
@@ -14,7 +14,7 @@ Three metrics per field, mirroring the ``name`` / ``name_nospace`` / ``name_char
 split used there, adapted to Assamese:
 
 ``exact``
-    byte-equal after Unicode NFC normalisation and whitespace collapse.
+    byte-equal after Unicode NFC normalization and whitespace collapse.
 ``skeleton``
     compares with all combining marks stripped, so a misplaced diacritic (গাঁও/গাওঁ)
     counts as a match while a wrong letter does not -- the same job ``name_nospace``
@@ -77,7 +77,7 @@ def skeleton(text: Any) -> str:
         গাঁও   vs গাওঁ       -> same skeleton  (recoverable placement artifact)
         কোকৰাঝাৰ vs কোকৰাব্মাৰ -> different     (a real misread, ঝ became ব্ম)
 
-    This is the Assamese analogue of the ``name_nospace`` metric in the Manipur
+    This is the Assamese analog of the ``name_nospace`` metric in the Manipur
     benchmark, which isolated an ALL-CAPS spacing artifact the same way.
     """
     decomposed = unicodedata.normalize("NFD", nfc(text))

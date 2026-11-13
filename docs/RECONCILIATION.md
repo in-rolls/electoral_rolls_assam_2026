@@ -89,7 +89,7 @@ it comes home** (`electors/deliver.py`). The second pass is not redundancy: the 
 produced a constituency is not a witness to its own correctness, and the cloud side is meant to
 be deleted.
 
-For the local judgement to be possible without the cloud, a **verification bundle** travels beside
+For the local judgment to be possible without the cloud, a **verification bundle** travels beside
 each shard — the printed totals and box counts per part, a few kilobytes. Re-judging from
 `stage1/` would mean pulling 383 MB per constituency to check 5 MB of rows, and `stage1/` is one
 of the things being deleted.

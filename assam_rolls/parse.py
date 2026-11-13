@@ -1,7 +1,7 @@
 """Turn a detected grid plus an OCR engine into schema rows.
 
 Every field is read from a cell whose position is known, so the parser never has to
-recognise a label to find a value. Two structures recur and are handled positionally:
+recognize a label to find a value. Two structures recur and are handled positionally:
 
 * **Stacked label/value blocks** (section 1's revision details, section 2's locality
   block) are split into text rows by ink profile, then each row is cropped to the value

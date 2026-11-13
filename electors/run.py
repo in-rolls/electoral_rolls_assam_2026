@@ -515,7 +515,7 @@ def verification_bundle(work_dir: Path, rows: Sequence[Dict[str, Any]], publishe
 
     A verdict needs each part's printed closing total and how many boxes stage one found. Those
     live in ``side.json`` and ``manifest.jsonl``, which together are 412 MB a constituency --
-    fifty gigabytes to check seven hundred megabytes of rows, and all of it in artefacts we
+    fifty gigabytes to check seven hundred megabytes of rows, and all of it in artifacts we
     intend to delete.
 
     So the numbers travel with the shard instead. The point is not convenience: it is that the

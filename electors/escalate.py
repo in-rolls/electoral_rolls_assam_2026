@@ -54,7 +54,7 @@ def doubtful(row: Dict[str, Any]) -> List[str]:
 
 
 def unlabelled_relation(row: Dict[str, Any]) -> List[str]:
-    """A relation value whose label was never recognised -- so it may be the elector's own.
+    """A relation value whose label was never recognized -- so it may be the elector's own.
 
     Not a floor detector: a genuinely unreadable label produces this too, and the value is
     usually right. It earns a place because of how it fails when it is wrong. When the label
